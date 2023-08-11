@@ -8,8 +8,9 @@ TARGET_OSNAME=buildroot
 # buildroot
 # 
 
-TARGET_BUILDROOT_CONFIG=friendlyelec_rk3328_defconfig
+TARGET_BUILDROOT_CONFIG=rockchip_rk3328_defconfig
 BUILDROOT_SRC=buildroot
+BUILDROOT_FILES+=(device/rockchip)
 BUILDROOT_FILES+=(device/friendlyelec/overwrite-rk-files)
 BUILDROOT_FILES+=(device/friendlyelec/keep-the-net-classic-naming)
 BUILDROOT_FILES+=(device/friendlyelec/network-interfaces)
@@ -33,7 +34,8 @@ TARGET_KERNEL_DTB=resource.img
 # Misc
 # 
 TARGET_IMAGE_DIRNAME=buildroot
-TARGET_SD_RAW_FILENAME=Buildroot_$(date +%Y%m%d)_RK3328_arm64_sd.img
-TARGET_EFLASHER_RAW_FILENAME=Buildroot_$(date +%Y%m%d)_RK3328_arm64_eflasher.img
+BUILDROOT_OUTDIR=output/rockchip_rk3328
+TARGET_SD_RAW_FILENAME=buildroot_$(date +%Y%m%d)_RK3328_arm64_sd.img
+TARGET_EFLASHER_RAW_FILENAME=buildroot_$(date +%Y%m%d)_RK3328_arm64_eflasher.img
 
 
