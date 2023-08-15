@@ -11,7 +11,7 @@ TARGET_OSNAME=buildroot
 TARGET_BUILDROOT_CONFIG=rockchip_rk3399_defconfig
 BUILDROOT_SRC=buildroot
 BUILDROOT_FILES+=(device/rockchip)
-BUILDROOT_FILES+=(device/friendlyelec/overwrite-rk-files)
+BUILDROOT_FILES+=(device/friendlyelec/misc-files)
 BUILDROOT_FILES+=(device/friendlyelec/keep-the-net-classic-naming)
 BUILDROOT_FILES+=(device/friendlyelec/network-interfaces)
 BUILDROOT_FILES+=(device/friendlyelec/fancontrol)
@@ -20,6 +20,8 @@ BUILDROOT_FILES+=(device/friendlyelec/disable-unnecessary-services)
 BUILDROOT_FILES+=(device/friendlyelec/load-modules-service)
 BUILDROOT_FILES+=(device/friendlyelec/rk3399/r8169)
 BUILDROOT_FILES+=(device/friendlyelec/rk3399/wifi_module)
+BUILDROOT_FILES+=(device/friendlyelec/firmware)
+BUILDROOT_FILES+=(device/friendlyelec/rk3399/overwrite-rk-files)
 
 # U-boot
 # 
@@ -36,7 +38,7 @@ TARGET_KERNEL_DTB=resource.img
 # 
 TARGET_IMAGE_DIRNAME=buildroot
 BUILDROOT_OUTDIR=output/rockchip_rk3399
-TARGET_SD_RAW_FILENAME=buildroot_$(date +%Y%m%d)_RK3399_arm64_sd.img
-TARGET_EFLASHER_RAW_FILENAME=buildroot_$(date +%Y%m%d)_RK3399_arm64_eflasher.img
+TARGET_SD_RAW_FILENAME=buildroot_$(date +%Y%m%d)_rk3399_arm64_sd.img
+TARGET_EFLASHER_RAW_FILENAME=buildroot_$(date +%Y%m%d)_rk3399_arm64_eflasher.img
 
 
