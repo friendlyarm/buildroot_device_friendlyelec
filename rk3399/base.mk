@@ -22,6 +22,7 @@ BUILDROOT_FILES+=(device/friendlyelec/rk3399/r8169)
 BUILDROOT_FILES+=(device/friendlyelec/rk3399/wifi_module)
 BUILDROOT_FILES+=(device/friendlyelec/firmware)
 BUILDROOT_FILES+=(device/friendlyelec/rk3399/overwrite-rk-files)
+BUILDROOT_FILES+=(device/friendlyelec/alsa-config)
 
 # U-boot
 # 

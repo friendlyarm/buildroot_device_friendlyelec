@@ -1,0 +1,19 @@
+#!/bin/sh
+
+case "$1" in
+  start)
+	if [ -f /var/lib/alsa/asound.state ]; then
+		alsactl -U restore
+	else
+		alsactl -U init 2>/dev/null
+	fi
+	;;
+  stop)
+	alsactl store
+	;;
+  *)
+	echo "Usage: $0 {start|stop}"
+	exit 1
+	;;
+esac
+exit 0

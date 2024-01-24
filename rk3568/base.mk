@@ -21,6 +21,7 @@ BUILDROOT_FILES+=(device/friendlyelec/rk3568/disable-unnecessary-services)
 BUILDROOT_FILES+=(device/friendlyelec/load-modules-service)
 BUILDROOT_FILES+=(device/friendlyelec/rk3568/r8125)
 BUILDROOT_FILES+=(device/friendlyelec/firmware)
+BUILDROOT_FILES+=(device/friendlyelec/alsa-config)
 
 # U-boot
 # 

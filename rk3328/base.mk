@@ -19,6 +19,7 @@ BUILDROOT_FILES+=(device/friendlyelec/rom-version)
 BUILDROOT_FILES+=(device/friendlyelec/disable-unnecessary-services)
 BUILDROOT_FILES+=(device/friendlyelec/rk3328/disable-gui)
 BUILDROOT_FILES+=(device/friendlyelec/load-modules-service)
+BUILDROOT_FILES+=(device/friendlyelec/alsa-config)
 
 # U-boot
 # 
