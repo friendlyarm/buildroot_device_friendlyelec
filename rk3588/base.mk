@@ -23,6 +23,7 @@ BUILDROOT_FILES+=(device/friendlyelec/rk3588/r8125)
 BUILDROOT_FILES+=(device/friendlyelec/rk3588/set-pulse-audio-default-output-to-hdmi0)
 BUILDROOT_FILES+=(device/friendlyelec/firmware)
 BUILDROOT_FILES+=(device/friendlyelec/alsa-config)
+BUILDROOT_FILES+=(device/friendlyelec/usbdevice-wrapper)
 
 # U-boot
 # 

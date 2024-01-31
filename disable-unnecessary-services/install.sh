@@ -5,7 +5,6 @@ ROOTFS_DIR=$1
 services+=("36load_wifi_modules")
 services+=("80wifireconnect")
 services+=("98iodomain.sh")
-services+=("50usbdevice")
 
 (cd ${ROOTFS_DIR} && {
     cd etc/init.d
