@@ -1,0 +1,59 @@
+#!/bin/sh
+
+case "$1" in
+	start)
+		modprobe ledtrig-netdev
+		sleep 1
+		MODEL=$(tr -d '\0' < /proc/device-tree/board/model)
+		BOARD=$(echo "${MODEL// /-}" | awk '{print tolower($0)}')
+		case "$BOARD" in
+		nanopi-r2*|nanopi-r4s*|nanopi-r5c)
+			echo netdev > /sys/class/leds/wan_led/trigger
+			echo eth0 > /sys/class/leds/wan_led/device_name
+			echo 1 > /sys/class/leds/wan_led/link
+
+			echo netdev > /sys/class/leds/lan_led/trigger
+			echo eth1 > /sys/class/leds/lan_led/device_name
+			echo 1 > /sys/class/leds/lan_led/link
+			;;
+		nanopi-r5s*|nanopi-r6s)
+			echo netdev > /sys/class/leds/wan_led/trigger
+			echo eth0 > /sys/class/leds/wan_led/device_name
+			echo 1 > /sys/class/leds/wan_led/link
+
+			echo netdev > /sys/class/leds/lan1_led/trigger
+			echo eth1 > /sys/class/leds/lan1_led/device_name
+			echo 1 > /sys/class/leds/lan1_led/link
+
+			echo netdev > /sys/class/leds/lan2_led/trigger
+			echo eth2 > /sys/class/leds/lan2_led/device_name
+			echo 1 > /sys/class/leds/lan2_led/link
+			;;
+		nanopi-r6c)
+			echo netdev > /sys/class/leds/wan_led/trigger
+			echo eth0 > /sys/class/leds/wan_led/device_name
+			echo 1 > /sys/class/leds/wan_led/link
+
+			echo netdev > /sys/class/leds/lan1_led/trigger
+			echo eth1 > /sys/class/leds/lan1_led/device_name
+			echo 1 > /sys/class/leds/lan1_led/link
+			;;
+		nanopc-t6*)
+			echo netdev > /sys/class/leds/usr_led/trigger
+			echo eth0 > /sys/class/leds/usr_led/device_name
+			echo 1 > /sys/class/leds/usr_led/link
+			;;
+		esac
+		;;
+	stop)
+		;;
+	restart|reload)
+		$0 stop
+		$0 start
+		;;
+	*)
+		echo "Usage: $0 {start|stop|restart}"
+		exit 1
+esac
+
+exit 0
