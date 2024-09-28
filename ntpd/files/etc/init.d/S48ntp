@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# /etc/init.d/S20ntpd: start or stop the ntpd daemon
+
+case "$1" in
+    start)
+        echo "Starting ntpd..."
+        /usr/sbin/ntpd -g -c /etc/ntpd.conf
+        ;;
+    stop)
+        echo "Stopping ntpd..."
+        killall ntpd
+        ;;
+    restart)
+        echo "Restarting ntpd..."
+        $0 stop
+        $0 start
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+        ;;
+esac
+
+exit 0
