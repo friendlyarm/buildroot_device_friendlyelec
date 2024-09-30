@@ -3,6 +3,7 @@ set -eu
 ROOTFS_DIR=$1
 
 services+=("40rkaiq_3A")
+services+=("98iodomain.sh")
 
 (cd ${ROOTFS_DIR} && {
     cd etc/init.d
