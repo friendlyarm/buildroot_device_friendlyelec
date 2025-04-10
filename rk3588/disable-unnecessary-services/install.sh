@@ -8,6 +8,10 @@ services+=("40rkaiq_3A")
     cd etc/init.d
     for (( i=0; i<${#services[@]}; i++ ));
     do
-        [ -f S${services[$i]} ] && mv S${services[$i]} K${services[$i]}
+        if [ -f S${services[$i]} ]; then
+            mv S${services[$i]} K${services[$i]}
+        else
+            true
+        fi
     done
 })
