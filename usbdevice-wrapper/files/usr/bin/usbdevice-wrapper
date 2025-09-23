@@ -23,10 +23,14 @@ NANOPI5)
     # rk3568 kernel5.10/kernel6.1
     FILE=$(readlink -f /sys/kernel/debug/usb/fcc00000.*/mode)
     ;;
+NANOPI-M5)
+    # rk3576
+    FILE=$(readlink -f /sys/kernel/debug/usb/23000000.*/mode)
+    ;;
 NANOPI4)
-	# rk3399 kernel4.19
+    # rk3399 kernel4.19
     FILE=/sys/kernel/debug/fe800000.dwc3/mode
-	;;
+    ;;
 NANOPI3)
 	# rk3328 kernel4.19
     FILE=
